@@ -20,7 +20,6 @@ interface Props {
 
 const apps: DockApp[] = [
   { id: 1, name: 'About Me', iconUrl: 'https://icon-library.com/images/mac-os-icon/mac-os-icon-1.jpg' },
-  { id: 2, name: 'About Me', iconUrl: 'https://icon-library.com/images/mac-os-icon/mac-os-icon-1.jpg' },
 ];
 
 export default function Dock({
