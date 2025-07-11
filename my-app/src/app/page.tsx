@@ -459,7 +459,9 @@ export default function Home() {
         />
       ) : (
         <>
-          <ControlCenter/>
+          <div className='z-[999999999]'>
+            <ControlCenter/>
+          </div>
           <DockMobile
             openApp={openApp}
             minimizeApp={minimizeApp}
