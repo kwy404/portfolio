@@ -153,6 +153,7 @@ const Window: React.FC<WindowProps> = ({
       <motion.div
         ref={windowRef}
         className={`
+          z-50
           overflow: 'hidden',
           absolute rounded-2xl overflow-hidden shadow-2xl
           bg-black/50 border border-white/20
@@ -259,7 +260,7 @@ const Window: React.FC<WindowProps> = ({
 
           {/* Content */}
           <motion.div
-            className="p-6 pt-12 h-full overflow-auto text-white"
+            className="mt-20 h-full pb-20 overflow-auto text-white"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0, transition: { delay: 0.2 } }}
           >
@@ -268,7 +269,7 @@ const Window: React.FC<WindowProps> = ({
 
           {/* Resize Handles Invisíveis */}
           {!maximized && (
-            <>
+            <div className='z-50'>
               <div className="absolute top-0 left-0 w-full h-2 cursor-ns-resize" onMouseDown={handleMouseDown('top')} />
               <div className="absolute bottom-0 left-0 w-full h-2 cursor-ns-resize" onMouseDown={handleMouseDown('bottom')} />
               <div className="absolute top-0 left-0 h-full w-2 cursor-ew-resize" onMouseDown={handleMouseDown('left')} />
@@ -277,7 +278,7 @@ const Window: React.FC<WindowProps> = ({
               <div className="absolute top-0 right-0 w-4 h-4 cursor-nesw-resize" onMouseDown={handleMouseDown('top-right')} />
               <div className="absolute bottom-0 left-0 w-4 h-4 cursor-nesw-resize" onMouseDown={handleMouseDown('bottom-left')} />
               <div className="absolute bottom-0 right-0 w-4 h-4 cursor-nwse-resize" onMouseDown={handleMouseDown('bottom-right')} />
-            </>
+            </div>
           )}
         </LiquidGlass>
       </motion.div>

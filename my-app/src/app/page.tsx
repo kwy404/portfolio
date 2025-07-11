@@ -7,8 +7,10 @@ import Dock from './_components/Dock';
 import AboutMe from './_components/Apps/AboutMe';
 import DockMobile from './_components/DockMobile';
 import { motion, AnimatePresence, PanInfo } from 'framer-motion';
-import { User } from 'lucide-react';
+import { User, Music } from 'lucide-react';
 import ControlCenter from './_components/ControlCenter';
+import ControlCenterDesktop from './_components/ControlCenterDesktop';
+import Itunes from './_components/Apps/Itunes';
 
 interface AppData {
   id: number;
@@ -18,7 +20,8 @@ interface AppData {
 }
 
 const appsData: AppData[] = [
-  { id: 1, name: 'About Me', icon: <User size={28} color="white" />, content: <AboutMe /> }
+  { id: 1, name: 'About Me', icon: <User size={28} color="white" />, content: <AboutMe /> },
+   { id: 2, name: 'Itunes', icon: <Music size={28} color="white" />, content: <Itunes /> }
 ];
 
 interface OpenAppState {
@@ -450,13 +453,18 @@ export default function Home() {
 
       {/* Dock para desktop ou mobile */}
       {deviceType === 'desktop' ? (
-        <Dock
-          openApp={openApp}
-          minimizeApp={minimizeApp}
-          closeApp={closeApp}
-          activeAppIds={openApps.map((a) => a.id)}
-          onAppClick={openApp}
-        />
+        <>
+          <div className='z-[999999999]'>
+            <ControlCenterDesktop/>
+          </div>
+          <Dock
+            openApp={openApp}
+            minimizeApp={minimizeApp}
+            closeApp={closeApp}
+            activeAppIds={openApps.map((a) => a.id)}
+            onAppClick={openApp}
+          />
+        </>
       ) : (
         <>
           <div className='z-[999999999]'>
