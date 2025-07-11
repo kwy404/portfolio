@@ -345,9 +345,9 @@ const Itunes: React.FC = () => {
 
   return (
     <div className='absolute w-[100%] h-full left-0 overflow-auto'>
-        <div className="relative pb-30 left-0 w-full h-full bg-white flex flex-col font-sans select-none overflow-auto">
+        <div className="relative pb-30 left-0 w-full h-full bg-[rgba(255,255,255,.5)] flex flex-col font-sans select-none overflow-auto">
         {/* Header */}
-        <header className="bg-white flex items-center justify-between px-4 py-3 sm:px-6 sm:py-4 border-b border-gray-300 shadow-sm z-10">
+        <header className="bg-[rgba(255,255,255,.5)] flex items-center justify-between px-4 py-3 sm:px-6 sm:py-4 border-b border-gray-300 shadow-sm z-10">
             <div className="flex items-center gap-2">
             {isMobile && (
                 <button
@@ -388,7 +388,7 @@ const Itunes: React.FC = () => {
         </AnimatePresence>
 
         {/* Conteúdo principal */}
-        <main className="flex-1 flex bg-white overflow-auto">
+        <main className="flex-1 flex bg-[rgba(255,255,255,.5)] overflow-auto">
             {/* Sidebar */}
             <AnimatePresence>
             {(!isMobile || (isMobile && isSidebarOpen)) && (
@@ -397,7 +397,7 @@ const Itunes: React.FC = () => {
                 initial="closed"
                 animate="open"
                 exit="closed"
-                className={`w-48 sm:w-56 border-r border-gray-200 overflow-y-auto bg-white ${isMobile ? 'fixed top-0 left-0 h-full z-50' : ''}`}
+                className={`w-48 sm:w-56 border-r border-gray-200 overflow-y-auto bg-[rgba(255,255,255,.5)] ${isMobile ? 'fixed top-0 left-0 h-full z-50' : ''}`}
                 >
                 <ul>
                     {visibleCategories.map((cat, i) => (
@@ -428,7 +428,7 @@ const Itunes: React.FC = () => {
             >
             {view === 'edit' && editingTrack ? (
                 <div className="max-w-md mx-auto">
-                <h2 className="text-xl sm:text-2xl font-semibold mb-4">Editar Música</h2>
+                <h2 className="text-xl sm:text-2xl font-semibold mb-4 text-black">Editar Música</h2>
                 <div className="space-y-4">
                     <input
                     type="text"
@@ -519,7 +519,7 @@ const Itunes: React.FC = () => {
                     </motion.div>
                 ) : (
                     <>
-                    <h2 className="text-xl sm:text-2xl font-semibold mb-4">{selectedAlbum || selectedCategory}</h2>
+                    <h2 className="text-xl sm:text-2xl font-semibold mb-4 text-black">{selectedAlbum || selectedCategory}</h2>
                     <motion.div
                         className="space-y-2"
                         initial={{ opacity: 0 }}
@@ -567,7 +567,7 @@ const Itunes: React.FC = () => {
         </main>
 
         {/* Player */}
-        <footer className="fixed bottom-0 left-0 w-full h-16 sm:h-20 bg-white border-t border-gray-300 flex items-center px-2 sm:px-4 md:px-6 z-50">
+        <footer className="fixed bottom-0 left-0 w-full h-16 sm:h-20 bg-[rgba(255,255,255,.5)] border-t border-gray-300 flex items-center px-2 sm:px-4 md:px-6 z-50">
             <div
             className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded bg-gray-300 bg-center bg-cover mr-2 sm:mr-4"
             style={{
